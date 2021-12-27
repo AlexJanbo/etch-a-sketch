@@ -27,4 +27,18 @@ function createGrid(size) {
 
 
 
-createGrid(16);
+createGrid(5);
+
+function clearGrid() {
+    let newGridSize = window.prompt("Enter new Grid Size: ");
+    while(containerElement.firstChild) {
+        containerElement.removeChild(containerElement.firstChild);
+    }
+    createGrid(newGridSize);        
+    
+}
+
+let gridClearButton = document.getElementById("grid-clear");
+gridClearButton.addEventListener('click', function(event) {
+    clearGrid();
+});
